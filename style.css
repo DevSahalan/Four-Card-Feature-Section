@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.grid{
+    width: 1140px;
+    max-width: 100%;
+    display: grid;
+    margin:0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    " .  team  . "
+    " super team cal "
+    " super karma cal "
+    " . karma . " ;
+}
+
+.team{
+    grid-area: team;
+    
+}
+
+.super{
+    grid-area: super;
+}
+
+.cal{
+    grid-area: cal;
+}
+
+.karma{
+    grid-area: karma;
+}
+
+.grid-items{
+    padding: 20px;
+    border: 1px solid #E9E9E9 ;
+    margin: 10px 10px;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-items::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    
+    top:0;
+    left:0;
+    
+}
+
+
+.grid-items:nth-child(1)::before{
+    background-color: rgb(69,211,211);
+}
+
+.grid-items:nth-child(2)::before{
+    background-color: rgb(234,83,83);
+}
+
+.grid-items:nth-child(3)::before{
+    background-color: rgb(252,175,74);
+}
+
+.grid-items:nth-child(4)::before{
+    background-color: rgb(84,158,242);
+}
+
+
+.grid-items  img{
+    display:block;
+    margin-left: auto;
+    padding: 40px 10px 10px 0;
+}
+
+.container-small{
+    width: 600px;
+    display: block;
+    margin: 20px auto;
+    height: 30vh;
+    text-align: center;
+    padding: 30px 0;
+    max-width: 100%;
+}
+
+h1{
+    
+    font-weight: 200;
+}
+h1 span{
+    
+    font-weight: 600;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+h2{
+    font-weight: bold;
+}
+p{
+    margin-top: 10px;
+    margin-bottom: -10px;
+    color: hsl(229, 6%, 66%);
+}
+
+
+@media (max-width:1109px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        " . team"
+        " super team"
+        " super karma "
+        "cal  karma"
+        " cal . ";
+        
+        
+    }
+    .grid-items{
+        margin: 10px auto;
+    }
+  
+}
+
+@media (max-width:709px){
+    
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "super"
+        "team"
+        "cal"
+        "karma";
+    }
+    
+  
+}
